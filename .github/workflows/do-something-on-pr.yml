@@ -1,6 +1,6 @@
 name: Do Something When PR Opens
 on:
-  pull_requests:
+  pull_request:
 
 jobs:
   test_job:
