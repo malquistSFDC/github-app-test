@@ -1,0 +1,39 @@
+on:
+  workflow_dispatch:
+    inputs:
+      feature_branch:
+        description: "Feature branch"
+        required: true
+        type: "string"
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate GitHub App
+        id: github_app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Open Pull Request
+        uses: actions/github-script@v7
+        env:
+          FEATURE_BRANCH: ${{ inputs.feature_branch }}
+        with:
+          github-token: ${{ steps.github_app.outputs.token }}
+          script: |
+            const { FEATURE_BRANCH } = process.env;
+            await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${FEATURE_BRANCH}`,
+              base: `main`,
+              title: `Created with Bot`
+            });
