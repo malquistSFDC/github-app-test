@@ -1,0 +1,9 @@
+name: Do Something When PR Opens
+on:
+  pull_requests:
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggered on PR"
