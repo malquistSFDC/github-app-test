@@ -10,3 +10,13 @@ jobs:
     steps:
       - name: Output Single Summary
         run: echo "Test String" >> ${GITHUB_STEP_SUMMARY}
+  matrix_job_summaries:
+    name: Matrix Job Summaries
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test_value: ['one', 'two', 'three']
+    steps:
+      - name: Matrix Summary Number ${{ matrix.test_value }}
+        run: echo "Here is test_value ${{ matrix.test_value }}" >> ${GITHUB_STEP_SUMMARY}
+
