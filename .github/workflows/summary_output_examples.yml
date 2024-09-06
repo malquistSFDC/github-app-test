@@ -1,0 +1,12 @@
+name: Summary Output Page Workshop
+
+on:
+  workflow_dispatch:
+
+jobs:
+  single_job_summary:
+    name: Single Job Summary
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Single Summary
+        run: echo "Test String" >> ${GITHUB_STEP_SUMMARY}
