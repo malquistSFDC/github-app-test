@@ -22,6 +22,8 @@ jobs:
     strategy:
       matrix:
         test_value: ['one', 'two', 'three']
+        test_two: ['one', 'two', 'three']
+        test_three: ['one', 'two', 'three']
     steps:
       - name: Matrix Summary Number ${{ matrix.test_value }}
         id: output_test
