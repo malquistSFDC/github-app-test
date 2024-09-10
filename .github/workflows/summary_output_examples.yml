@@ -36,5 +36,5 @@ jobs:
     needs: matrix_job_summaries
     steps:
       - name: Output Stuff
-        run: echo '${{ needs.matrix_job_summaries.outputs }}'
+        run: echo '${{ toJSON(needs.matrix_job_summaries.outputs) }}'
 
