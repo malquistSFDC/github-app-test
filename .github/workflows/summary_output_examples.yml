@@ -22,5 +22,7 @@ jobs:
         test_value: ['one', 'two', 'three']
     steps:
       - name: Matrix Summary Number ${{ matrix.test_value }}
-        run: echo "Here is test_value ${{ matrix.test_value }}" >> ${GITHUB_STEP_SUMMARY}
+        run: |
+          echo "Here is test_value ${{ matrix.test_value }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "value_${matrix.test_value}=test" >> ${GITHUB_OUTPUT}
 
