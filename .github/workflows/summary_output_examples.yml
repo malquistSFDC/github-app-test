@@ -17,12 +17,24 @@ jobs:
   matrix_job_summaries:
     name: Matrix Job Summaries
     runs-on: ubuntu-latest
+    outputs:
+      value_one: ${{ steps.output_test.outputs.value_one }}
+      value_two: ${{ steps.output_test.outputs.value_two }}
+      value_three: ${{ steps.output_test.outputs.value_three }}
     strategy:
       matrix:
         test_value: ['one', 'two', 'three']
     steps:
       - name: Matrix Summary Number ${{ matrix.test_value }}
+        id: output_test
         run: |
           echo "Here is test_value ${{ matrix.test_value }}" >> ${GITHUB_STEP_SUMMARY}
           echo "value_${{matrix.test_value}}=test" >> ${GITHUB_OUTPUT}
+  print_outputs:
+    name: Matrix Outputs
+    runs-on: ubuntu-latest
+    needs: matrix_job_summaries
+    steps:
+      - name: Output Stuff
+        run: echo '${{ needs.matrix_job_summaries.outputs }}'
 
