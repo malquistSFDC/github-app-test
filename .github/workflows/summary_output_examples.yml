@@ -27,7 +27,7 @@ jobs:
         id: output_test
         run: |
           echo "Here is test_value ${{ matrix.test_value }}" >> ${GITHUB_STEP_SUMMARY}
-          echo "value_test=test" >> ${GITHUB_OUTPUT}
+          # echo "value_test=test" >> ${GITHUB_OUTPUT}
   print_outputs:
     name: Matrix Outputs
     runs-on: ubuntu-latest
