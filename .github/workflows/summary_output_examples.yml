@@ -26,10 +26,13 @@ jobs:
         test_three: ['one', 'two', 'three']
     steps:
       - name: Matrix Summary Number ${{ matrix.test_value }}
-        id: output_test
         run: |
           echo "Here is test_value ${{ matrix.test_value }}" >> ${GITHUB_STEP_SUMMARY}
           # echo "value_test=test" >> ${GITHUB_OUTPUT}
+      - name: Add a failure to one matrix job
+        id: output_test
+        if: ${{ matrix.test_value == 'one' && matrix.test_two == 'one' && matrix.test_three == 'one' }}
+        run: echo "value_test=test" >> ${GITHUB_OUTPUT}
   print_outputs:
     name: Matrix Outputs
     runs-on: ubuntu-latest
