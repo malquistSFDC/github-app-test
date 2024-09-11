@@ -27,7 +27,7 @@ jobs:
         env:
           FEATURE_BRANCH: ${{ inputs.feature_branch }}
         with:
-          github-token: ${{ steps.github_app.outputs.token }}
+          #          github-token: ${{ steps.github_app.outputs.token }}
           script: |
             const { FEATURE_BRANCH } = process.env;
             await github.rest.pulls.create({
