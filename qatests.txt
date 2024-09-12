@@ -1,6 +1,5 @@
 AwesomeerClassTest
 AnotherClassTest
-CTest
 DumbTest
 ATest
 BTest
