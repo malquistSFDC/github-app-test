@@ -1,2 +1,2 @@
-*/package.xml merge=ours
-qatests.txt merge=ours
+*/package.xml merge=theirs
+qatests.txt merge=theirs
