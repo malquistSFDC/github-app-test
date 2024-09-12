@@ -1,1 +1,2 @@
-test_dir/renamed_file.txt	merge=no-renames
+*/package.xml merge=theirs
+qatests.txt merge=theirs
