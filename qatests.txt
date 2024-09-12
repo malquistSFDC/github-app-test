@@ -1,5 +1,6 @@
 AwesomeerClassTest
 BettererClassTest
-AnotherClassTest
 BlahTest
 DumbTest
+SmartTest
+LetsTest
