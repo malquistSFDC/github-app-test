@@ -1,4 +1,5 @@
-AwesomeClassTest
-BetterClassTest
+AwesomeerClassTest
+BettererClassTest
 AnotherClassTest
 BlahTest
+DumbTest
