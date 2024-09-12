@@ -1,2 +1,5 @@
 AnotherClassTest
+SyncTest
+BlinkTest
 BlahTest
+HowAboutThisTest
