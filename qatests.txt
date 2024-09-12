@@ -1,2 +1,4 @@
 AwesomeClassTest
 BetterClassTest
+AnotherClassTest
+BlahTest
