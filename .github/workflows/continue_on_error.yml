@@ -35,4 +35,16 @@ jobs:
           blah
           echo "Test 3"
 
+      - name: Display Outcomes and Conclusions of each Scenario
+        id: output-scenario-results
+        run: |
+          echo "Scenario 1 outcome: ${{ steps.scen-1.outcome }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 1 conclusion: ${{ steps.scen-1.conclusion }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 2 outcome: ${{ steps.scen-2.outcome }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 2 conclusion: ${{ steps.scen-2.conclusion }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 3 outcome: ${{ steps.scen-3.outcome }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 3 conclusion: ${{ steps.scen-3.conclusion }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 4 outcome: ${{ steps.scen-4.outcome }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 4 conclusion: ${{ steps.scen-4.conclusion }}" >> ${GITHUB_STEP_SUMMARY}
+
     
