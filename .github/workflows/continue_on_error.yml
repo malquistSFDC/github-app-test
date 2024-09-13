@@ -1,0 +1,24 @@
+name: Continue On Error Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testing_errors:
+    name: Testing Error Continuation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scenario 1: Throw Error As Expected
+        id: scen-1
+        continue-on-error: true
+        run: exit 1
+
+      - name: Scenario 2: Output After Error
+        id: scen-2
+        continue-on-error: true
+        run: |
+          set +e
+          exit 1
+          echo "Test"
+
+    
