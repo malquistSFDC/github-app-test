@@ -27,6 +27,7 @@ jobs:
           set +e
           blah
           echo "Test 2"
+          echo "scenario_3_failure=true" >> ${GITHUB_OUTPUT}
 
       - name: Scenario 4 - Output after error w/ continue-on-error and no set+e
         id: scen-4
@@ -34,6 +35,11 @@ jobs:
         run: |
           blah
           echo "Test 3"
+
+      - name: Run If Scenario 3 Has Failed
+        id: fail-scen-3-test
+        if: ${{ steps.scen-3.outputs.scenario_3_failure }}
+        run: echo "Scenario 3 has failed. Outputting error to summary." >> ${GITHUB_STEP_SUMMARY}
 
       - name: Display Outcomes and Conclusions of each Scenario
         id: output-scenario-results
