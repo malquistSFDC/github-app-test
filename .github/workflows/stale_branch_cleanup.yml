@@ -1,0 +1,14 @@
+name: Clean Up Stale Branches
+
+on:
+  workflow_dispatch:
+
+jobs:
+  view_branches:
+    name: View Branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Branches
+        id: list-branches
+        run: |
+          echo "test"
