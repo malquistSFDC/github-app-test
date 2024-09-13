@@ -28,4 +28,10 @@ jobs:
           blah
           echo "Test 2"
 
+      - name: Scenario 4 - Output after error w/ continue-on-error and no set+e
+        id: scen-4
+        run: |
+          blah
+          echo "Test 3"
+
     
