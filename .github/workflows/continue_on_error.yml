@@ -59,5 +59,7 @@ jobs:
           echo "Scenario 3 conclusion: ${{ steps.scen-3.conclusion }}" >> ${GITHUB_STEP_SUMMARY}
           echo "Scenario 4 outcome: ${{ steps.scen-4.outcome }}" >> ${GITHUB_STEP_SUMMARY}
           echo "Scenario 4 conclusion: ${{ steps.scen-4.conclusion }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 5 outcome: ${{ steps.scen-5.outcome }}" >> ${GITHUB_STEP_SUMMARY}
+          echo "Scenario 5 conclusion: ${{ steps.scen-5.conclusion }}" >> ${GITHUB_STEP_SUMMARY}
 
     
