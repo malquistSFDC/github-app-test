@@ -36,6 +36,13 @@ jobs:
           blah
           echo "Test 3"
 
+      - name: Scenario 5 - Exit 1 with set +e
+        id: scen-5
+        run: |
+          set +e
+          echo "Test 5"
+          exit 1
+
       - name: Run If Scenario 3 Has Failed
         id: fail-scen-3-test
         if: ${{ steps.scen-3.outputs.scenario_3_failure }}
