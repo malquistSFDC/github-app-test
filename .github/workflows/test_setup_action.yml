@@ -1,0 +1,10 @@
+name: Test Composite Setup Action
+
+on: workflow_dispatch
+
+jobs:
+  setup_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Environment
+        uses: malquistSFDC/runner-setup-poc@v0.1
