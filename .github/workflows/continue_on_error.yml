@@ -37,6 +37,7 @@ jobs:
           echo "Test 3"
 
       - name: Scenario 5 - Exit 1 with set +e
+        continue-on-error: true
         id: scen-5
         run: |
           set +e
