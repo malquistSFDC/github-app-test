@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Environment
-        uses: malquistSFDC/runner-setup-poc@v0.7
+        uses: malquistSFDC/runner-setup-poc@v0.8
       - name: Test SF CLI
         run: sf
       - name: Test SF Plugin
