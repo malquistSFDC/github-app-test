@@ -9,11 +9,9 @@ jobs:
       - name: Setup Environment
         uses: malquistSFDC/runner-setup-poc@v0.8
       - name: Test SF CLI
-        run: sf
-      - name: Test SF Plugin
-        run: sf acu-pack --help
+        run: npx sf
       - name: Test Vlocity
-        run: vlocity
+        run: npx vlocity
       - name: Test Python
         run: python3 --version
       - name: Test GitHub CLI
